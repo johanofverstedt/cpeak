@@ -22,9 +22,16 @@ typedef long double f128;
 #ifdef CPEAK_64BIT
 typedef u64 size_type;
 typedef i64 index_type;
+typedef u64 usize;
+typedef i64 isize;
 #else
 typedef u32 size_type;
 typedef i32 index_type;
+typedef u32 usize;
+typedef i32 isize;
 #endif
+
+typedef const char* cstring;
+typedef char*       cstring_mutable;
 
 #endif
