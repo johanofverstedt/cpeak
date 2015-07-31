@@ -36,49 +36,50 @@ enum token_tag_enum {
   token_tag_char_literal = 10,
 
   // operators
-  token_tag_op_left_param,
-  token_tag_op_right_param,
-  token_tag_op_left_brace,
-  token_tag_op_right_brace,
-  token_tag_op_left_bracket,
-  token_tag_op_right_bracket,
+  token_tag_op_left_param = 11,
+  token_tag_op_right_param = 12,
+  token_tag_op_left_brace = 13,
+  token_tag_op_right_brace = 14,
+  token_tag_op_left_bracket = 15,
+  token_tag_op_right_bracket = 16,
 
-  token_tag_op_add,
-  token_tag_op_sub,
-  token_tag_op_mul,
-  token_tag_op_div,
-  token_tag_op_mod,
+  token_tag_op_add = 17,    // +
+  token_tag_op_sub = 18,    // -
+  token_tag_op_negate = 18, // -
+  token_tag_op_mul = 19,    // *
+  token_tag_op_div = 20,    // /
+  token_tag_op_mod = 21,    // %
 
-  token_tag_op_and,
-  token_tag_op_or,
-  token_tag_op_not,
-  token_tag_op_question,
-  token_tag_op_colon,
-  token_tag_op_semicolon,
-  token_tag_op_dot,
-  token_tag_op_comma,
-  token_tag_op_dollar,
-  token_tag_op_hash,
-  token_tag_op_assign,
+  token_tag_op_and,         // &&
+  token_tag_op_or,          // ||
+  token_tag_op_not,         // !
+  token_tag_op_question,    // ?
+  token_tag_op_colon,       // :
+  token_tag_op_semicolon,   // ;
+  token_tag_op_dot,         // .
+  token_tag_op_comma,       // ,
+  token_tag_op_dollar,      // $
+  token_tag_op_hash,        // #
 
-  token_tag_op_equality,
-  token_tag_op_inequality,
-  token_tag_op_less,
-  token_tag_op_greater,
-  token_tag_op_less_or_equal,
-  token_tag_op_greater_or_equal,
+  token_tag_op_equality,         // ==
+  token_tag_op_inequality,       // !=
+  token_tag_op_less,             // <
+  token_tag_op_greater,          // >
+  token_tag_op_less_or_equal,    // <=
+  token_tag_op_greater_or_equal, // >=
 
-  token_tag_op_assignment,
-  token_tag_op_left_arrow,
-  token_tag_op_right_arrow,
+  token_tag_op_assignment,      // =
+  token_tag_op_decl_assignment, // :=
+  token_tag_op_left_arrow,      // <-
+  token_tag_op_right_arrow,     // ->
 
-  token_tag_op_left_shift,
-  token_tag_op_right_shift,
+  token_tag_op_left_shift,      // <<
+  token_tag_op_right_shift,     // >>
 
-  token_tag_op_ref,
-  token_tag_op_deref,
+  token_tag_op_ref,             // &
+  token_tag_op_deref,           // *
 };
-
+def hej(a: &&int) = a[2, 3]
 struct lexer_state {
   cstring str;
   u32     str_len;
