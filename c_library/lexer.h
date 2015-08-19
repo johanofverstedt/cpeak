@@ -61,12 +61,12 @@ enum token_tag_enum {
   token_tag_op_dollar,      // $
   token_tag_op_hash,        // #
 
-  token_tag_op_equality,         // ==
-  token_tag_op_inequality,       // !=
-  token_tag_op_less,             // <
-  token_tag_op_greater,          // >
-  token_tag_op_less_or_equal,    // <=
-  token_tag_op_greater_or_equal, // >=
+  token_tag_op_equality,              // ==
+  token_tag_op_inequality,            // !=
+  token_tag_op_less_than,             // <
+  token_tag_op_greater_than,          // >
+  token_tag_op_less_than_or_equal,    // <=
+  token_tag_op_greater_than_or_equal, // >=
 
   token_tag_op_assignment,      // =
   token_tag_op_decl_assignment, // :=
@@ -79,7 +79,7 @@ enum token_tag_enum {
   token_tag_op_ref,             // &
   token_tag_op_deref,           // *
 };
-def hej(a: &&int) = a[2, 3]
+
 struct lexer_state {
   cstring str;
   u32     str_len;

@@ -1,0 +1,116 @@
+
+import std.math;
+import vec.v2;
+import ../../log.logwriter;
+
+struct v2[T, N: usize] {
+  elem: [T, N];
+}
+
+interface listener {
+  a: (u32): i32;
+  b: (string): usize;
+}
+
+variant janus[T, N: usize] {
+	a: u32;
+	b: i32;
+	c: v2[f64, 2];
+}
+
+d: janus[f64, 2](dynamic)
+
+def v2(self: &v2, x: f64, y: f64) {
+	self.elem[0] = x;
+	self.elem[1] = y;
+}
+def v2(self: &v2, x: f64) {
+  v2(self, x, 0.0);
+}
+
+def v2(x: f64, y: f64): v2 {
+  a: union v2;
+}
+
+def bar() {
+	print_line("hello world$ $$ $", 5, 3.14, ...);
+}
+
+def foo(a: &u8, b: &i32): i32 {
+	(&u8, i32): i32
+	([u8], i32): i32
+	a : () = bar;
+
+}
+a:= lambda(a: i32): u32 { return cast[u32](a) + 5; }
+
+b : v2;
+
+a := v2(2.0, 4.0)
+a := init v2(2.0, 4.0)
+a := init v2(b)
+a := u32.make(5)
+a := new u32;
+
+def pi_2 = 2.0 * pi
+
+def square(a): ... { return a * a; }
+
+def pi_square = square(pi);
+
+function levels:
+
+macro foo(a, b) {
+	
+}
+
+inline_byref
+inline_byval
+
+inline byval
+macro
+inline
+call
+
+expression levels:
+
+macro
+inline
+
+
+@macro
+def foo(a, b)
+foo(x * x, y * y)
+
+// function levels
+
+1: text macro-expansion
+   def foo(a, b) = 2 * a + b
+   -
+   c = 3 * foo(x*x, y*y)
+   ->
+   c = 3 * 2 * x * x + y * y
+
+2: expr macro-expansion
+   def foo(a, b) = 2 * a + b
+   -
+   c = 3 * foo(x * x, y * y)
+   ->
+   c = 3 * (2 * (x * x) + (y * y))
+
+3: inline macro
+   def foo(a, b): t {
+     print("hello_world!");
+     return 2 * a + b; 
+   }
+   -
+   c = 3 * foo(x * x, y * y)
+   ->
+   c: t;
+   foo_ret: t;
+   {
+     print("hello_world");
+     foo_ret = 2 * (x * x) + (y * y);
+   }
+   
+4: def 
